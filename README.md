@@ -1,13 +1,38 @@
 # hw-blog
 
-Local edit!
+## How to run locally
 
-<<<<<<< HEAD
-* hw03-blog
-* Assigned: 2 Feb 2024
-* Due: 11 Feb
-* template repo: https://github.com/nuwebdev/hw-blog
-* github-classroom invitation: https://classroom.github.com/a/QKgcJSQm
-=======
-* instructions: [assignment.md](assignment.md)
->>>>>>> a4a37b5e3c318efc545d254add609e615ab0f9f3
+1. Clone repo, cd into it
+2. run: 
+
+```
+export FLASK_APP=flaskr
+flask run --debug
+```
+
+Debug flag is optional if you don't wanna change anything and see those changes in real time. 
+
+
+
+## New Functionality: rank by word count
+
+I added an endpoint (just added it to __init__.py file since this was an experiment) that performs a SQL query to get the longest blog posts by word count, and then made a template word-count.html that takes that json information and displays with with flask's render_template(). 
+
+It's not very pretty, but the basic idea could then be fiddled with the sort ascending/descending as well as by other features (newest/oldest, etc)
+
+Entries:
+[[wordcount2.png]]
+
+Ranked by word count: 
+[[wordcount.png]]
+
+If you were to then edit a post or add a post, the rankings would be adjusted. 
+
+## New Design
+
+I made buttons for the top header bar. 
+
+[[css.png]]
+
+## Acknowledgements
+

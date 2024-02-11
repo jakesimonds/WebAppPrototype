@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Word Counts
+{% endblock %}
+
+{% block header %}
+<h2>Posts by Word Count</h2>
+{% endblock %}
+
+{% block content %}
+<ul class="word-count-list">
+    {% for post in posts %}
+    <li>
+        <strong> {{ loop.index }}: Title:</strong> {{ post.title }} <br>
+        <strong>Word Count:</strong> {{ post.word_count }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
