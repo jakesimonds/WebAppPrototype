@@ -21,10 +21,10 @@ I added an endpoint (just added it to __init__.py file since this was an experim
 It's not very pretty, but the basic idea could then be fiddled with the sort ascending/descending as well as by other features (newest/oldest, etc)
 
 Entries:
-!(wordcount2.png)
+![](wordcount2.png)
 
 Ranked by word count: 
-!(wordcount.png)
+![](wordcount.png)
 
 If you were to then edit a post or add a post, the rankings would be adjusted. 
 
@@ -32,7 +32,7 @@ If you were to then edit a post or add a post, the rankings would be adjusted.
 
 I made buttons for the top header bar. 
 
-!(css.png)
+![](css.png)
 
 ## Acknowledgements
 
