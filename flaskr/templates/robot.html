@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Word Counts
+{% endblock %}
+
+{% block header %}
+<h2>Robot</h2>
+{% endblock %}
+
+{% block content %}
+
+<ul class="robot">
+    <button id="connect">Connect</button>
+    <button id="forward">forward</button>
+    <button id="right">Right</button>
+    <button id="left">Left</button>
+    <button id="back">Back</button>
+    <button id="disconnect">Disconnect</button>
+</ul>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const actions = ['forward', 'right', 'left', 'back', 'connect','disconnect'];
+    
+    actions.forEach(action => {
+        document.getElementById(action).addEventListener('click', function() {
+            console.log(action);
+            fetch('/' + action)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+</script>
+
+{% endblock %}
+

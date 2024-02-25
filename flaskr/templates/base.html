@@ -10,9 +10,10 @@
       <li><a class="oval-button" href="/wordcount">See Posts Ranked by Wordcount</a>
     {% if g.user %}
 
-
+          <li><a class="oval-button" href="/robot">Drive the Robot</a>
           <li><span>{{ g.user['username'] }}</span>
           <li><a class="oval-button" href="{{ url_for('auth.logout') }}">Log Out</a>
+            
     {% else %}
       <li><a class="oval-button" href="{{ url_for('auth.register') }}">Register</a>
       <li><a class="oval-button" href="{{ url_for('auth.login') }}">Log In</a>
