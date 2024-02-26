@@ -4,6 +4,7 @@ from flask import Flask, render_template, jsonify
 from . import db
 import requests
 
+IP_address = "192.168.1.174"   # on server: ifconfig | grep inet
 
 def create_app(test_config=None):
     # create and configure the app
@@ -81,42 +82,43 @@ def create_app(test_config=None):
     @app.route('/connect')
     def connect():
         print("connect hit, sending")
-        res = requests.get('http://localhost:5555/connect')
+        res = requests.get(f'http://{IP_address}:5555/connect')
         print("sent")
         return jsonify(res.json())
 
     @app.route('/forward')
     def forward():
         print("before request to 5555")
-        response = requests.get('http://localhost:5555/forward')
+        response = requests.get(f'http://{IP_address}:5555/forward')
         print("after request to 5555")
         return jsonify(response.json())
 
     @app.route('/right')
     def right():
         print("before request to 5555")
-        response = requests.get('http://localhost:5555/right')
+        response = requests.get(f'http://{IP_address}:5555/right')
         print("after request to 5555")
         return jsonify(response.json())
     
     @app.route('/left')
     def left():
         print("before request to 5555")
-        response = requests.get('http://localhost:5555/left')
+        response = requests.get(f'http://{IP_address}:5555/left')
         print("after request to 5555")
         return jsonify(response.json())
 
     @app.route('/back')
     def back():
         print("before request to 5555")
-        response = requests.get('http://localhost:5555/back')
+        response = requests.get(f'http://{IP_address}:5555/back')
         print("after request to 5555")
         return jsonify(response.json())
     
+    # broken btw
     @app.route('/disconnect')
     def disconnect():
         print("before request to 5555")
-        response = requests.get('http://localhost:5555/disconnect')
+        response = requests.get(f'http://{IP_address}:5555/disconnect')
         print("after request to 5555")
         return jsonify(response.json())
 
